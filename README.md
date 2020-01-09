@@ -12,4 +12,6 @@ This is a script by which you can install Kali Nethunter (Kali Linux) in your te
 3. Run script `./install-nethunter-minimal-termux`
 4. Now just start kali nethunter `nethunter`
 
+#### Credited To Offensive Security
+
 #### You have any idea to improve ? So Just give PR
