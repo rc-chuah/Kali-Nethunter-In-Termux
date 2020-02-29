@@ -16,12 +16,9 @@ This is a script by which you can install Kali Nethunter (Kali Linux) in your te
 
 #### Credited To Offensive Security
 
-#### License
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux?ref=badge_large)
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux?ref=badge_large)
 
 #### You have any idea to improve ? So Just give PR
 
 
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux?ref=badge_large)
