@@ -1,4 +1,6 @@
 # Kali-Nethunter-In-Termux
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux?ref=badge_shield)
+
 This is a script by which you can install Kali Nethunter (Kali Linux) in your termux application without rooted phone.
 ### Steps For Installation
 ### Install Kali Nethunter Full Version
@@ -15,3 +17,7 @@ This is a script by which you can install Kali Nethunter (Kali Linux) in your te
 #### Credited To Offensive Security
 
 #### You have any idea to improve ? So Just give PR
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fraynerchuah%2FKali-Nethunter-In-Termux?ref=badge_large)
