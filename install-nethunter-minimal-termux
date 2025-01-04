@@ -62,8 +62,7 @@ function get_arch() {
 
 function set_strings() {
     CHROOT=kali-${SYS_ARCH}
-    IMAGE_NAME=kalifs-${SYS_ARCH}-minimal.tar.xz
-    SHA_NAME=kalifs-${SYS_ARCH}-minimal.sha512sum
+    IMAGE_NAME=kali-nethunter-rootfs-minimal-${SYS_ARCH}.tar.xz
 }    
 
 function prepare_fs() {
@@ -80,12 +79,9 @@ function prepare_fs() {
 function cleanup() {
     if [ -f ${IMAGE_NAME} ]; then
         if ask "Delete downloaded rootfs file?" "N"; then
-	    if [ -f ${IMAGE_NAME} ]; then
-                rm -f ${IMAGE_NAME}
-	    fi
-	    if [ -f ${SHA_NAME} ]; then
-                rm -f ${SHA_NAME}
-	    fi
+            if [ -f ${IMAGE_NAME} ]; then
+                    rm -f ${IMAGE_NAME}
+            fi
         fi
     fi
 } 
@@ -112,7 +108,6 @@ function check_dependencies() {
 
 function get_url() {
     ROOTFS_URL="${BASE_URL}/${IMAGE_NAME}"
-    SHA_URL="${BASE_URL}/${SHA_NAME}"
 }
 
 function get_rootfs() {
@@ -129,27 +124,6 @@ function get_rootfs() {
     printf "${blue}[*] Downloading rootfs...${reset}\n\n"
     get_url
     wget ${EXTRA_ARGS} --continue "${ROOTFS_URL}"
-}
-
-function get_sha() {
-    if [ -z $KEEP_IMAGE ]; then
-        printf "\n${blue}[*] Getting SHA ... ${reset}\n\n"
-        get_url
-        if [ -f ${SHA_NAME} ]; then
-            rm -f ${SHA_NAME}
-        fi
-        wget ${EXTRA_ARGS} --continue "${SHA_URL}"
-    fi
-}
-
-function verify_sha() {
-    if [ -z $KEEP_IMAGE ]; then
-        printf "\n${blue}[*] Verifying integrity of rootfs...${reset}\n\n"
-        sha512sum -c $SHA_NAME || {
-            printf "${red} Rootfs corrupted. Please run this installer again or download the file manually\n${reset}"
-            exit 1
-        }
-    fi
 }
 
 function extract_rootfs() {
@@ -371,8 +345,6 @@ set_strings
 prepare_fs
 check_dependencies
 get_rootfs
-get_sha
-verify_sha
 extract_rootfs
 create_launcher
 cleanup
