@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash -e
 
-VERSION=2024091801
+VERSION=20250525
 BASE_URL=https://image-nethunter.kali.org/nethunter-fs/kali-daily
 USERNAME=kali
 
@@ -64,7 +64,7 @@ function set_strings() {
     CHROOT=kali-${SYS_ARCH}
     IMAGE_NAME=kali-nethunter-daily-dev-rootfs-full-${SYS_ARCH}.tar.xz
     SHA_NAME=${IMAGE_NAME}.sha512sum
-}    
+}
 
 function prepare_fs() {
     unset KEEP_CHROOT
@@ -75,7 +75,7 @@ function prepare_fs() {
             KEEP_CHROOT=1
         fi
     fi
-} 
+}
 
 function cleanup() {
     if [ -f "${IMAGE_NAME}" ]; then
@@ -88,7 +88,7 @@ function cleanup() {
         fi
         fi
     fi
-} 
+}
 
 function check_dependencies() {
     printf "${blue}\n[*] Checking package dependencies...${reset}\n"
@@ -131,9 +131,10 @@ function get_rootfs() {
     wget --continue "${ROOTFS_URL}"
 }
 
+## --fail doesn't play nice with --retry*
 function check_sha_url() {
-    if ! curl --head --silent --fail "${SHA_URL}" > /dev/null; then
-        echo "[!] SHA_URL does not exist or is unreachable"
+    if ! curl --silent --show-error --retry 5 --retry-delay 60 --head --user-agent NetHunter-rootless "${SHA_URL}" > /dev/null; then
+        echo "[!] SHA_URL (${SHA_URL}) does not exist or is unreachable"
         return 1
     fi
     return 0
