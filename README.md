@@ -50,7 +50,7 @@ This is a script by which you can install Kali Nethunter (Kali Linux) in your te
 </a>
 
 ## Stargazers Over Time
-[![Stargazers over time](https://starchart.cc/rc-chuah/Kali-Nethunter-In-Termux.svg?variant=adaptive)](https://starchart.cc/rc-chuah/Kali-Nethunter-In-Termux)
+[![Stargazers Over Time](https://starchart.cc/rc-chuah/Kali-Nethunter-In-Termux.svg?variant=adaptive)](https://starchart.cc/rc-chuah/Kali-Nethunter-In-Termux)
 
 #### Credited To Offensive Security
 
